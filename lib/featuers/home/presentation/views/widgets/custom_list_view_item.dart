@@ -7,9 +7,7 @@ class CustomListViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height:MediaQuery.of(context).size.height*.23,
-      child:AspectRatio(aspectRatio: 2.8 / 4,
+    return AspectRatio(aspectRatio: 2.8 / 4,
         child:Container(
 
 
@@ -22,6 +20,6 @@ class CustomListViewItem extends StatelessWidget {
               ),
             ),
           ),
-        ),),);
+        ),);
   }
 }
