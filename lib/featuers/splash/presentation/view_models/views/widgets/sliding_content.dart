@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utilis/assets.dart';
+import '../../../../../../core/utilis/assets.dart';
 class SlidingContent extends StatelessWidget {
   final Animation<Offset> slidingAnimation;
 
