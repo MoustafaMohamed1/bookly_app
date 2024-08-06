@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../../../core/utilis/styles.dart';
-import 'best_seler_list_view.dart';
+import 'best_sller_list_view_item.dart';
 import 'custom_app_bar.dart';
 import 'featuerd_list_view.dart';
 
@@ -13,7 +13,7 @@ class HomeViewBody extends StatelessWidget {
     return CustomScrollView(
       physics: const BouncingScrollPhysics(),
       slivers: [
-        SliverFillRemaining(
+        SliverToBoxAdapter(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -32,12 +32,16 @@ class HomeViewBody extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const BestSellerListView(),
             ],
           ),
         ),
+        SliverToBoxAdapter(
+          child: const Padding(
+            padding: EdgeInsets.symmetric(vertical: 10),
+            child: BestSellerListViewItem(),
+          ),
+        )
       ],
     );
   }
 }
-

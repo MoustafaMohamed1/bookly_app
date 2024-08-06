@@ -1,5 +1,7 @@
 
+import 'package:bookly_app/core/utilis/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../../constants.dart';
 import '../../../../../core/utilis/assets.dart';
 import '../../../../../core/utilis/styles.dart';
@@ -10,7 +12,11 @@ class BestSellerListViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return GestureDetector(
+    onTap:(){
+      GoRouter.of(context).push(AppRouter.kBookDetailesView);
+    },
+        child:Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: SizedBox(
         height: 125,
@@ -70,6 +76,6 @@ class BestSellerListViewItem extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ),);
   }
 }

@@ -1,4 +1,5 @@
 
+import 'package:bookly_app/core/utilis/app_router.dart';
 import 'package:bookly_app/featuers/splash/presentation/view_models/views/widgets/sliding_content.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -51,7 +52,7 @@ navigateToHome();
   }
   void navigateToHome(){
     Future.delayed(const Duration(seconds: 2),(){
-      GoRouter.of(context).push('/homeView');
+      GoRouter.of(context).push(AppRouter.kHomeView);
     }
     );
   }
