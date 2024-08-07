@@ -4,7 +4,9 @@ import 'package:bookly_app/featuers/home/presentation/manger/featured_books_cubi
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'custom_book_image.dart';
+
 
 class FeaturedBookListView extends StatelessWidget {
   const FeaturedBookListView({super.key});
@@ -13,23 +15,28 @@ class FeaturedBookListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<FeaturedBooksCubit, FeaturedBooksState>(
         builder: (context, state) {
-          if(state is FeaturedBooksSucces){
-      return SizedBox(
-        height: MediaQuery.of(context).size.height * .3,
-        child: ListView.builder(
-            itemCount: 10,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
-              return const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8),
-                child:  CustomBookImage(),
-              );
-            }),
-      );}else if(state is FeaturedBooksFailuer){
-            return CustomErrorWidget(errorMessage: state.errMessag);
-          }else{
-           return const CustomLoadingIndecator();
-          }
+      if (state is FeaturedBooksSucces) {
+        return SizedBox(
+          height: MediaQuery.of(context).size.height * .3,
+          child: ListView.builder(
+            physics: const BouncingScrollPhysics(),
+              itemCount: state.books.length,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  child: CustomBookImage(
+                    imageUrl:
+                        state.books[index].volumeInfo.imageLinks!.thumbnail,
+                  ),
+                );
+              }),
+        );
+      } else if (state is FeaturedBooksFailuer) {
+        return CustomErrorWidget(errorMessage: state.errMessag);
+      } else {
+        return const CustomLoadingIndecator();
+      }
     });
   }
 }
