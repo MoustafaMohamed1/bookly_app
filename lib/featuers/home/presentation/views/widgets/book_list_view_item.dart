@@ -7,8 +7,8 @@ import '../../../../../core/utilis/assets.dart';
 import '../../../../../core/utilis/styles.dart';
 import 'book_rating.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
+class BookListViewItem extends StatelessWidget {
+  const BookListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class BestSellerListViewItem extends StatelessWidget {
       GoRouter.of(context).push(AppRouter.kBookDetailesView);
     },
         child:Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 15),
       child: SizedBox(
         height: 125,
         child: Row(
