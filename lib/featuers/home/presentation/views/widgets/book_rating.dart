@@ -19,7 +19,7 @@ final MainAxisAlignment mainAxisAlignment;
         const SizedBox(
           width: 6.3,
         ),
-        const Text(
+         Text(
           '4.8',
           style: Styles.textStyle16,
         ),

@@ -20,23 +20,26 @@ class BooklyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-        providers: [
-          BlocProvider(
-            create: (context) => FeaturedBooksCubit(getIt.get<HomeRepoImpl>(),)..fetchFeaturedBooks(),
-          ),
-          BlocProvider(
-            create: (context) => NewestBooksCubit(getIt.get<HomeRepoImpl>()),
-          ),
-        ],
-        child: MaterialApp.router(
-          routerConfig: AppRouter.router,
-          theme: ThemeData.dark().copyWith(
-            scaffoldBackgroundColor: kPrimaryColor,
-            textTheme:
-                GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
-          ),
-          debugShowCheckedModeBanner: false,
+      providers: [
+        BlocProvider(
+          create: (context) => FeaturedBooksCubit(
+            getIt.get<HomeRepoImpl>(),
+          )..fetchFeaturedBooks(),
         ),
+        BlocProvider(
+          create: (context) =>
+              NewestBooksCubit(getIt.get<HomeRepoImpl>())..fetchNewestBooks(),
+        ),
+      ],
+      child: MaterialApp.router(
+        routerConfig: AppRouter.router,
+        theme: ThemeData.dark().copyWith(
+          scaffoldBackgroundColor: kPrimaryColor,
+          textTheme:
+              GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
+        ),
+        debugShowCheckedModeBanner: false,
+      ),
     );
   }
 }
