@@ -2,12 +2,13 @@ import 'package:bookly_app/featuers/home/presentation/views/widgets/simillar_boo
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../../../data/models/BookModel.dart';
 import 'books_detailes_section.dart';
 import 'custom_book_detailes_app_bar.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key});
-
+  const BookDetailsViewBody({super.key, required this.booksModel});
+final BookModel booksModel;
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -17,7 +18,7 @@ class BookDetailsViewBody extends StatelessWidget {
           child:Column(
             children: [
               const CustomBookDetailsAppBar(),
-              const BookDetailsSection(),
+               BookDetailsSection(bookModel: booksModel,),
 
 
               const Expanded(child: SizedBox(

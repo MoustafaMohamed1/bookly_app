@@ -5,7 +5,6 @@ import 'package:bookly_app/featuers/home/presentation/views/widgets/custom_book_
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../constants.dart';
-import '../../../../../core/utilis/assets.dart';
 import '../../../../../core/utilis/styles.dart';
 import 'book_rating.dart';
 
@@ -16,7 +15,7 @@ final BookModel bookModel;
   Widget build(BuildContext context) {
     return GestureDetector(
     onTap:(){
-      GoRouter.of(context).push(AppRouter.kBookDetailesView);
+      GoRouter.of(context).push(AppRouter.kBookDetailesView,extra: bookModel);
     },
         child:Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),

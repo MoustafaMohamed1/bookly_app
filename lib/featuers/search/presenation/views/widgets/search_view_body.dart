@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utilis/styles.dart';
-import '../../../../home/presentation/views/widgets/book_list_view_item.dart';
 import 'custom_text_field.dart';
 
 class SearchViewBody extends StatelessWidget {
