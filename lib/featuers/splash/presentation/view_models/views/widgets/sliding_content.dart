@@ -4,8 +4,7 @@ import '../../../../../../core/utilis/assets.dart';
 class SlidingContent extends StatelessWidget {
   final Animation<Offset> slidingAnimation;
 
-  const SlidingContent({Key? key, required this.slidingAnimation})
-      : super(key: key);
+  const SlidingContent({super.key, required this.slidingAnimation});
 
   @override
   Widget build(BuildContext context) {

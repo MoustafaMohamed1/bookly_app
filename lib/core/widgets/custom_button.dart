@@ -19,17 +19,17 @@ class CustomButton extends StatelessWidget {
     return SizedBox(
       height: 48,
       child: ElevatedButton(
-        child: Text(
-          text,
-          style: Styles.textStyle18
-              .copyWith(color: textColor, fontWeight: FontWeight.w900),
-        ),
         onPressed: onPressed,
         style: TextButton.styleFrom(
           backgroundColor: backGroundColor,
           shape: RoundedRectangleBorder(
             borderRadius: borderRadius ?? BorderRadius.circular(16),
           ),
+        ),
+        child: Text(
+          text,
+          style: Styles.textStyle18
+              .copyWith(color: textColor, fontWeight: FontWeight.w900),
         ),
       ),
     );
